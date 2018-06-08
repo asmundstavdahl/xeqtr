@@ -1,0 +1,59 @@
+# GUIBUILDER FILE Build 146
+# Created: 2018-06-08 21:41:54 by GUI Builder Build 146
+language tcl 8.4
+widget {Tk frame} f {
+	configure -background #cccccc
+	geometry min_column 1005
+	geometry min_row {65 557}
+	geometry pad_column 0
+	geometry pad_row {0 0}
+	geometry resize_column 0
+	geometry resize_row {1 0}
+	geometry weight_column 0
+	geometry weight_row {0 0}
+	data GROUP Tk
+	data ID {}
+	data MASTER {}
+	data TYPE {Tk frame}
+	data level 0
+}
+widget {Tk entry} _entry_1 {
+	configure -background #333333
+	configure -borderwidth 0
+	configure -font {{courier 10 pitch} 24}
+	configure -foreground #ff7e00
+	configure -highlightbackground #000000
+	configure -highlightcolor #00ff00
+	configure -justify center
+	configure -relief flat
+	configure -takefocus 1
+	configure -textvariable hint
+	configure -width 0
+	geometry -column 1
+	geometry -columnspan 1
+	geometry -row 1
+	geometry -rowspan 1
+	geometry -sticky nsew
+	data GROUP Tk
+	data ID hint_entry
+	data MASTER {}
+	data TYPE {Tk entry}
+}
+widget {BWidget ListBox} _ListBox_1 {
+	configure -background #cccccc
+	configure -borderwidth 0
+	configure -font {{courier 10 pitch} 12}
+	configure -relief flat
+	configure -selectmode single
+	configure -takefocus 0
+	geometry -column 1
+	geometry -columnspan 1
+	geometry -row 2
+	geometry -rowspan 1
+	geometry -sticky nsew
+	data GROUP BWidget
+	data ID matches
+	data MASTER {}
+	data TYPE {BWidget ListBox}
+}
+
