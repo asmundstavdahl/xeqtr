@@ -38,7 +38,13 @@ foreach p $paths {
 		}
 	} else {
 		catch {
-			foreach f [exec find $p/ -maxdepth 1 -executable -type f,l] {
+			foreach f [exec find $p/ -maxdepth 1 -executable -type f] {
+				variable name [lindex [split $f /] end]
+				if {-1 == [lsearch -exact [array names completions] $name]} {
+					set completions($name) $f
+				}
+			}
+			foreach f [exec find $p/ -maxdepth 1 -executable -type l] {
 				variable name [lindex [split $f /] end]
 				if {-1 == [lsearch -exact [array names completions] $name]} {
 					set completions($name) $f
