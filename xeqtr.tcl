@@ -6,17 +6,19 @@
 #################BY ÅSMUND STAVDAHL######
 #########################################
 
-cd [file dirname $argv0]
-
 package require Tk
 
 set OS [lindex $tcl_platform(os) 0]
 if { $OS == "Windows" } {
+	cd [file dirname $argv0]
+
 	set path $::env(PATH)
 	set path [string map {\\ /} $path]
 	set paths [regexp -inline -all {[^;]+} $path]
 	set extentions [list .exe .bat .hint]
 } else {
+	cd [file dirname [exec realpath $argv0]]
+
 	set path $::env(PATH)
 	set paths [regexp -inline -all {[^:]+} $path]
 	set extentions [list]
@@ -62,6 +64,8 @@ set list_items [list hei]
 source ui.tcl
 
 ui::ui .
+
+wm client . xeqtr-client
 
 bind . <Key> {
 	variable hint
